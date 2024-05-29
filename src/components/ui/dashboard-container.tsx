@@ -105,9 +105,7 @@ export async function DashboardContainer() {
             />
           </div>
           <div className="relative z-10 p-6 ">
-            {config.identifier && config.identifier !== "" && (
-              <NftUploadForm usdTo={usdTo} />
-            )}
+            <NftUploadForm usdTo={usdTo} />
           </div>
         </div>
       </div>

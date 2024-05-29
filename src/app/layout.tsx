@@ -14,7 +14,7 @@ import {
   ConfigContextType,
   ConfigProvider,
 } from "@/app/providers/ConfigContext";
-import { SolanaConnectionProvider } from "@/app/providers/SolanaConnectionProvider";
+// import { SolanaConnectionProvider } from "@/app/providers/SolanaConnectionProvider";
 import GoogleCaptchaWrapper from "@/app/providers/GoogleCaptchaWrapper";
 
 import localFont from "next/font/local";
@@ -93,16 +93,16 @@ export default async function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="light">
           <Suspense fallback={<></>}>
             <ConfigProvider value={config}>
-              <SolanaConnectionProvider>
-                <RainbowKitToolProvider>
-                  <GoogleCaptchaWrapper>
-                    <AuthProvider>
-                      <AssetsProvider>{children}</AssetsProvider>
-                      <Toaster />
-                    </AuthProvider>
-                  </GoogleCaptchaWrapper>
-                </RainbowKitToolProvider>
-              </SolanaConnectionProvider>
+              {/* <SolanaConnectionProvider> */}
+              <RainbowKitToolProvider>
+                <GoogleCaptchaWrapper>
+                  <AuthProvider>
+                    <AssetsProvider>{children}</AssetsProvider>
+                    <Toaster />
+                  </AuthProvider>
+                </GoogleCaptchaWrapper>
+              </RainbowKitToolProvider>
+              {/* </SolanaConnectionProvider> */}
             </ConfigProvider>
           </Suspense>
         </ThemeProvider>
