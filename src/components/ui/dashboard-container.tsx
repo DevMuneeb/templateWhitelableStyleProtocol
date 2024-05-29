@@ -3,6 +3,8 @@ import Image from "next/image";
 import NftUploadForm from "@/components/ui/nft-upload-form";
 import { ConfigContextType } from "@/app/providers/ConfigContext";
 
+export const dynamic = "force-dynamic";
+
 export async function DashboardContainer() {
   let config: ConfigContextType = {
     logo: "",
