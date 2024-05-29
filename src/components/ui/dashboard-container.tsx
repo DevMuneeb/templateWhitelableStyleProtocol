@@ -19,21 +19,11 @@ export async function DashboardContainer() {
     collectionContract: "",
   };
 
-  try {
-    // Fetch configuration data
-    const configResponse = await fetch(
-      process.env.NEXT_PUBLIC_ENV_URL as string
-    );
+  // Fetch configuration data
+  const configResponse = await fetch(process.env.NEXT_PUBLIC_ENV_URL as string);
 
-    if (!configResponse.ok) {
-      throw new Error("Network response was not ok");
-    }
-
-    const { data } = await configResponse.json();
-    config = data;
-  } catch (error) {
-    console.error("Failed to fetch configuration:", error);
-  }
+  const { data } = await configResponse.json();
+  config = data;
 
   const TARGET_SYMBOL =
     config.currencySymbol || process.env.NEXT_PUBLIC_TARGET_SYMBOL || "";
