@@ -30,6 +30,7 @@ const nextConfig = {
     config.externals.push("pino-pretty", "lokijs", "encoding");
     return config;
   },
+  staticPageGenerationTimeout: 10000,
 };
 
 export default nextConfig;
